@@ -1,0 +1,160 @@
+<p>auth works!</p>
+
+<div class="log-form" id="log-form" [class.right-panel-active]="isSignUpActive">
+  <div class="form-container sign-in-container" *ngIf="!isSignUpActive">
+    <div class="containerse">
+      <header>Signup</header>
+      <div class="progress-bar">
+        <div class="step">
+          <p>Name</p>
+          <div class="bullet">
+            <span>1</span>
+          </div>
+          <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+          <p>Contact</p>
+          <div class="bullet">
+            <span>2</span>
+          </div>
+          <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+          <p>Birth</p>
+          <div class="bullet">
+            <span>3</span>
+          </div>
+          <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+          <p>Submit</p>
+          <div class="bullet">
+            <span>4</span>
+          </div>
+          <div class="check fas fa-check"></div>
+        </div>
+      </div>
+      <div class="form-outer">
+        <form [formGroup]="registrationForm" >
+          <div class="page" *ngIf="currentSignIn === 1 && !isSignUpActive">
+            <div class="title">Basic Info:</div>
+            <div class="field">
+              <div class="label">First Name</div>
+              <input type="text" formControlName="name" required />
+            </div>
+            <div class="field">
+              <div class="label">Last Name</div>
+              <input type="text" formControlName="lastName" required />
+            </div>
+            <div class="field">
+              <button class="firstNext next" (click)="next($event, false)">
+                Next
+              </button>
+            </div>
+          </div>
+          <div class="page" *ngIf="currentSignIn === 2 && !isSignUpActive">
+            <div class="title">Contact Info:</div>
+            <div class="field">
+              <div class="label">Email Address</div>
+              <input type="text" formControlName="email" required />
+            </div>
+            <div class="field">
+              <div class="label">Phone Number</div>
+              <input type="Number" formControlName="phone" required />
+            </div>
+            <div class="field btns">
+              <button class="prev-1 prev" (click)="prev($event, false)">
+                Previous
+              </button>
+              <button class="next-1 next" (click)="next($event, false)">
+                Next
+              </button>
+            </div>
+          </div>
+          <div class="page" *ngIf="currentSignIn === 3 && !isSignUpActive">
+            <div class="title">Date of Birth:</div>
+            <div class="field">
+              <div class="label">Date</div>
+              <input type="date" formControlName="dateOfBirth" required />
+            </div>
+            <div class="field">
+              <div class="label">User type</div>
+              <select formControlName="role" required>
+                <option>client</option>
+                <option>entreprise</option>
+              </select>
+            </div>
+            <div class="field btns">
+              <button class="prev-2 prev" (click)="prev($event, false)">
+                Previous
+              </button>
+              <button class="next-2 next" (click)="next($event, false)">
+                Next
+              </button>
+            </div>
+          </div>
+          <div class="page">
+            <div class="title">Login Details:</div>
+            <div class="field">
+              <div class="label">Username</div>
+              <input type="text" formControlName="userName" required />
+            </div>
+            <div class="field">
+              <div class="label">Password</div>
+              <input type="password" formControlName="password" autocomplete="current-password" required />
+            </div>
+            <div class="field btns">
+              <button class="prev-3 prev" (click)="prev($event, false)">
+                Previous
+              </button>
+              <button class="submit" (click)="registerUser()" >Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="form-container sign-up-container" *ngIf="isSignUpActive">
+    <div class="containerse">
+      <header>LOGIN IN</header>
+      <form (submit)="loginUser($event)">
+        <div class="inputs">
+
+          <div class="label">Email</div>
+          <input type="email" #email   required />
+          <div class="label">password</div>
+          <input type="password" #password required />
+          <div class="fields">
+            <button type="submit">LOG-IN</button>
+          </div>
+          <div class="reset">
+            <p>
+              Mot de passe oublié ?<a (click)="navigateTo('forgot_pass')">
+                Réinitialisez-le maintenant</a
+              >
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1>Welcome Back!</h1>
+        <p>To keep connected with us please login with your personal info</p>
+        <button class="ghost" (click)="toggleSignUp()" id="signIn">
+          Sign In
+        </button>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h1>Hello, Friend!</h1>
+        <p>Enter your personal details and start the journey with us</p>
+        <button class="ghost" (click)="toggleSignUp()" id="signUp">
+          Sign Up
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

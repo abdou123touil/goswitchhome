@@ -1,0 +1,27 @@
+<nav class="navbar">
+  <div class="logo">HouseSwap</div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="auth-link">
+    <!-- Show Login/Register if user is not logged in -->
+    <span *ngIf="!isLoggedIn" (click)="navigateTo('/auth')">Login/Register</span>
+
+    <!-- Show user icon and dropdown if user is logged in -->
+    <div *ngIf="isLoggedIn" class="user-menu">
+      <img
+        src="assets/user-icon.png"
+        alt="User Icon"
+        class="user-icon"
+        (click)="toggleDropdown()"
+      />
+      <ul class="dropdown" *ngIf="dropdownVisible">
+        <li (click)="navigateTo('/add-house')">Add New House</li>
+        <li (click)="navigateTo('/profile')">Profile</li>
+        <li (click)="logout()">Logout</li>
+      </ul>
+    </div>
+  </div>
+</nav>

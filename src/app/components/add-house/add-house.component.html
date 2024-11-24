@@ -1,0 +1,39 @@
+<div class="add-house-section">
+  <h2 class="section-title">Add New House</h2>
+  <form [formGroup]="houseForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="location">Location</label>
+      <input id="location" formControlName="location" type="text" placeholder="Enter house location" />
+    </div>
+
+    <div class="form-group">
+      <label for="size">Size</label>
+      <input id="size" formControlName="size" type="text" placeholder="Enter house size (e.g., 1200 sq ft)" />
+    </div>
+
+    <div class="form-group">
+      <label for="amenities">Amenities</label>
+      <textarea id="amenities" formControlName="amenities" placeholder="Enter amenities (e.g., pool, garden)"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="image">Primary Image</label>
+      <input id="image" type="file" (change)="onFileSelect($event)" />
+    </div>
+
+    <div class="form-group">
+      <label for="images">Additional Images</label>
+      <input id="images" type="file" multiple (change)="onMultipleFilesSelect($event)" />
+    </div>
+
+    <div class="form-group">
+      <label for="availability">Availability</label>
+      <select id="availability" formControlName="availability">
+        <option [value]="true">Available</option>
+        <option [value]="false">Not Available</option>
+      </select>
+    </div>
+
+    <button type="submit" class="submit-btn" [disabled]="houseForm.invalid">Add House</button>
+  </form>
+</div>

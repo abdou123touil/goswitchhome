@@ -1,0 +1,30 @@
+<section id="home" class="hero-section">
+  <div class="image-slider">
+    <div class="slider-track" [style.transform]="'translateX(' + (-currentIndex * 100) + '%)'">
+      <img *ngFor="let image of images" [src]="image" alt="Luxury home" class="slider-image">
+    </div>
+  </div>
+</section>
+
+<section id="services" class="services-section">
+<h2 class="section-title">Our Services</h2>
+<div class="services-grid">
+  <div class="service-card" *ngFor="let service of services">
+    <div class="service-icon">{{ service.icon }}</div>
+    <h3>{{ service.title }}</h3>
+    <p>{{ service.description }}</p>
+  </div>
+</div>
+</section>
+
+<section id="contact" class="contact-section">
+<h2 class="section-title">Contact Us</h2>
+<div class="contact-container">
+  <div class="contact-form">
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea placeholder="Your Message"></textarea>
+    <button class="submit-btn">Send Message</button>
+  </div>
+</div>
+</section>

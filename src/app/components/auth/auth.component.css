@@ -1,0 +1,439 @@
+
+::selection {
+  color: #fff;
+  background: linear-gradient(to right, #000000, var(--gold));
+
+}
+
+.log-form {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 50em;
+  height: 120%;
+  min-height: 480px;
+  margin-top: 5%;
+  margin-left: 20%;
+  padding: 50px 35px 10px 35px;
+
+}
+
+.log-form header {
+  font-size: 25px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+}
+
+.log-form .form-outer {
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 35px 10px 35px;
+}
+
+.log-form .form-outer form {
+  display: flex;
+  width: 500%;
+}
+
+.form-outer form .page {
+  width: 25%;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.form-outer form .page .title {
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.form-outer form .page .field {
+  width: 85%;
+  height: 35px;
+  margin: 38px 0;
+  display: flex;
+  position: relative;
+}
+
+.reset a {
+  display: flex;
+  justify-content: center;
+  color: var(--gold);
+}
+.custom-snackbar {
+  background-color: var(--gold); /* Set background color to red */
+  color: white; /* Set text color to white */
+}
+form .page .field input.empty {
+  border-color: red;
+}
+
+/* Add this CSS to style the error message */
+form .page .field .error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+form .page .field .label {
+  position: absolute;
+  font-weight: 500;
+  margin-top: -30px;
+}
+
+form .page .field input,
+form .page .field select {
+  width: 100%;
+  padding-left: 15px;
+  font-size: 18px;
+
+}
+
+form .page .field input {
+  height: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+form .inputs .fields button {
+  width: 93%;
+  height: calc(100% + 5px);
+  border: none;
+  background: linear-gradient(to right, #000000, #575757);
+  border-radius: 5px;
+  color: var(--gold);
+  margin-top: 10%;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+form .page .field button
+{
+  width: 100%;
+  height: calc(100% + 15px);
+  border: none;
+  background: linear-gradient(to right, #000000, #575757);
+  margin-top: -20px;
+  border-radius: 5px;
+  color: var(--gold);
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+
+form .page .field button:hover {
+  background: var(--gold);
+  color: #000;
+}
+
+form .page .btns button.prev {
+  margin-right: 3px;
+  font-size: 15px;
+}
+
+form .page .btns button.next {
+  margin-left: 3px;
+}
+
+.containerse .progress-bar {
+  display: flex;
+  margin: 20px 0;
+  user-select: none;
+}
+
+.containerse .progress-bar .step {
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.containerse .progress-bar .step p {
+  font-weight: 700;
+  font-size: 12px;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.progress-bar .step .bullet {
+  height: 25px;
+  width: 25px;
+  border: 2px solid #000;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.2s;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.progress-bar .step .bullet.active {
+  border-color: var(--gold);
+  background: linear-gradient(to right, #000000, #575757);
+}
+
+.progress-bar .step .bullet span {
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  transform: translateX(-50%);
+}
+
+.progress-bar .step .bullet.active span {
+  display: none;
+}
+
+.progress-bar .step .bullet:before,
+.progress-bar .step .bullet:after {
+  position: absolute;
+  content: '';
+  bottom: 9px;
+  right: -78px;
+  height: 3px;
+  width: 75px;
+  background: #262626;
+}
+
+.progress-bar .step .bullet.active:after {
+  background: linear-gradient(to right, #000000, #575757);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 0.3s linear forwards;
+}
+
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.progress-bar .step:last-child .bullet:before,
+.progress-bar .step:last-child .bullet:after {
+  display: none;
+}
+
+.progress-bar .step p.active {
+  color: var(--gold);
+  transition: 0.2s linear;
+}
+
+.progress-bar .step .check {
+  position: absolute;
+  left: 50%;
+  top: 75%;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.progress-bar .step .check.active {
+  display: block;
+  color: #fff;
+}
+
+.sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+h1,
+h2 {
+  font-weight: bold;
+  margin: 0;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+}
+
+span {
+  font-size: 12px;
+}
+
+a {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0;
+}
+
+button {
+  border-radius: 20px;
+  border: 1px solid #FF4B2B;
+  background-color: #FF4B2B;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+
+button.ghost {
+  background-color: transparent;
+  border-color: #FFFFFF;
+}
+.inputs{
+  padding: 10px 15px 10px 35px;
+
+
+}
+
+.inputs .title{
+font-weight: 700;
+margin-bottom: 10% ;
+display: flex;
+justify-content: center;
+}
+.inputs input {
+
+  border: 1px solid lightgrey ;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 8px 0;
+  width: 85%;
+
+}
+
+.form-container {
+position: absolute;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container,
+.sign-up-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.log-form.right-panel-active .sign-in-container,
+.log-form.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+}
+
+.sign-up-container {
+  opacity: 0;
+}
+
+.log-form.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+
+@keyframes show {
+  0%, 49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%, 100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 55%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+  padding: 0px 35px 10px 35px;
+  border-radius: 10px;
+}
+
+.log-form.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.overlay {
+
+  background: linear-gradient(to right, #000000, #575757);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #FFFFFF;
+  position: relative;
+  left: -100%;
+  height: 110%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.log-form.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+  transform: translateX(-20%);
+}
+
+.log-form.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.log-form.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+
+.containerse .progress-bar .steps {
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.containerse .progress-bar .steps p {
+  font-weight: 700;
+  font-size: 12px;
+  color: #000;
+  margin-bottom: 18px;
+}
+
